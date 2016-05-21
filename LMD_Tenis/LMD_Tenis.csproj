@@ -60,7 +60,7 @@
     <Compile Include="GameFramewerk\BaseGame\Physics\GPhysics.cs" />
     <Compile Include="GameFramewerk\BaseGame\Physics\InfoBody.cs" />
     <Compile Include="GameFramewerk\BaseGame\Physics\Solver.cs" />
-    <Compile Include="GameFramewerk\BaseGame\SystemParticles.cs" />
+    <Compile Include="GameFramewerk\BaseGame\GSystemParticles.cs" />
     <Compile Include="GameFramewerk\IAudio.cs" />
     <Compile Include="GameFramewerk\ICamera.cs" />
     <Compile Include="GameFramewerk\IFileIO.cs" />
@@ -68,10 +68,7 @@
     <Compile Include="GameFramewerk\IGraphics.cs" />
     <Compile Include="GameFramewerk\IInput.cs" />
     <Compile Include="GameFramewerk\IPhysics.cs" />
-    <Compile Include="GameFramewerk\Objects\BaseObject.cs" />
-    <Compile Include="GameFramewerk\Objects\Circle.cs" />
-    <Compile Include="GameFramewerk\Objects\Rectangle.cs" />
-    <Compile Include="GameFramewerk\Objects\TypeObject.cs" />
+    <Compile Include="GameFramewerk\ISystemParticles.cs" />
     <Compile Include="GameFramewerk\Screen.cs" />
     <Compile Include="GameFramewerk\UI\Animations\AnimationEffect.cs" />
     <Compile Include="GameFramewerk\UI\Animations\IAnimationEvent.cs" />

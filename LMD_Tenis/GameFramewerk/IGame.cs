@@ -47,5 +47,7 @@
 		/// </summary>
 		/// <returns></returns>
 		ICamera GetCamera();
+
+		ISystemParticles GetSystemParticles();
 	}
 }

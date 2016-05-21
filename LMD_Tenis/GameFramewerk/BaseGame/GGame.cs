@@ -17,6 +17,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame
 		private IInput input;
 		private IPhysics physics;
 		private ICamera camera;
+		private ISystemParticles systemParticles;
 		private float DeltaTime;
 		private float PrevDeltaTime;
 		#endregion
@@ -34,6 +35,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame
 			input = new GInput();
 			physics = new GPhysics(this);
 			camera = new GCamera();
+			systemParticles = new GSystemParticles(this);
 
 			MScreen.SetCurrentScreen(GetStartScreen());
 
@@ -123,6 +125,11 @@ namespace LMD_Tenis.GameFramewerk.BaseGame
 		public ICamera GetCamera()
 		{
 			return camera;
+		}
+
+		public ISystemParticles GetSystemParticles()
+		{
+			return systemParticles;
 		}
 
 		#region Update and rendering game

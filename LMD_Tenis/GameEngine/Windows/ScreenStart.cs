@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using LMD_Tenis.GameFramewerk;
+using LMD_Tenis.GameFramewerk.BaseGame;
 using LMD_Tenis.GameFramewerk.UI;
 using LMD_Tenis.GameFramewerk.UI.Animations;
 using LMD_Tenis.GameFramewerk.Windows;
@@ -51,6 +52,7 @@ namespace LMD_Tenis.GameEngine.Windows
 		{
 			Game.GetGraphics().GetGraphics().Clear(Color.Brown);
 			
+			Game.GetSystemParticles().DrawAndStep(dt);
 			DrawElements(dt);
 		}
 
@@ -70,6 +72,24 @@ namespace LMD_Tenis.GameEngine.Windows
 		public override void TouchDown(System.Windows.Forms.MouseEventArgs eventArgs)
 		{
 			TouchElements(eventArgs.X, eventArgs.Y, TypeTouch.Down);
+
+			Game.GetSystemParticles().Add(eventArgs.X, eventArgs.Y, new GSystemParticles.ParticleParameters[]
+			{
+				new GSystemParticles.ParticleParameters()
+				{
+					Alpha = 155,
+					angle = 0,
+					AngularVelocity = 0,
+					Color = Color.MistyRose,
+					width = 100,
+					height = 100,
+					Image = null,
+					radius = 20,
+					Size = 1,
+					TTL = 100,
+					Type = GSystemParticles.TypeParticle.Circle
+				},
+			});
 		}
 
 		public override void TouchMove(System.Windows.Forms.MouseEventArgs eventArgs)
