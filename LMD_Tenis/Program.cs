@@ -19,15 +19,7 @@ namespace LMD_Tenis
 			Application.SetCompatibleTextRenderingDefault(false);
 
 			GGame windowGame = new GGame();
-
-			windowGame.GetFileIO().ReadFile("");
-
-			for (int i = 0; i < windowGame.GetFileIO().GetSettingListItems().Count; i++)
-			{
-				Console.WriteLine("name: " + windowGame.GetFileIO().GetSettingListItems()[i].name + " value: " +
-					windowGame.GetFileIO().GetSettingListItems()[i].param);
-			}
-
+			
 			Application.Run(windowGame);
 		}
 	}

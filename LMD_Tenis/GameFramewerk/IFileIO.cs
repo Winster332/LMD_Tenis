@@ -6,8 +6,7 @@ namespace LMD_Tenis.GameFramewerk
 {
 	public interface IFileIO
 	{
-		void ReadFile(String path);
-		void WriteFile(String path);
-		List<GFileIO.Item> GetSettingListItems();
+		void SetDataXMLFile(String path, Object obj);
+		Object GetDataXMLFile(String path, Type type);
 	}
 }

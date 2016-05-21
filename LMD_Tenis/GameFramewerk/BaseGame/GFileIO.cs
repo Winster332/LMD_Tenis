@@ -1,80 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
+using System.Xml.Serialization;
 
 namespace LMD_Tenis.GameFramewerk.BaseGame
 {
 	public class GFileIO : IFileIO
 	{
-		public List<Item> items;
+		public const String PATH_DATA = @"Data\";
 
-		public GFileIO()
+		public void SetDataXMLFile(string path, object obj)
 		{
-			items = new List<Item>();
-		}
+			String all_path = PATH_DATA + path;
+			XmlSerializer serializer = new XmlSerializer(obj.GetType());
 
-		/// <summary>
-		/// Загружает данные из настроек
-		/// </summary>
-		/// <param name="path"></param>
-		public void ReadFile(string path)
-		{
-			String res = GameResource.Settings;
-			bool read_name = false;
-			bool read_value = false;
+			if (!Directory.Exists(PATH_DATA))
+				Directory.CreateDirectory(PATH_DATA);
 
-			for (int i = 0; i < res.Length; i++)
+			using (Stream stream = new FileStream(all_path, FileMode.Create))
 			{
-				if (res[i] == '[')
-				{
-					items.Add(new Item());
-					read_name = true;
-					continue;
-				}
-				if (res[i] == ']')
-				{
-					read_name = false;
-					continue;
-				}
-				if (res[i] == '{')
-				{
-					read_value = true;
-					continue;
-				}
-				if (res[i] == '}')
-				{
-					read_value = false;
-					continue;
-				}
-
-				if (read_name)
-				{
-					items[items.Count - 1].name += res[i];
-				}
-				if (read_value)
-				{
-					items[items.Count - 1].param += res[i];
-				}
+				serializer.Serialize(stream, obj);
 			}
 		}
 
-		public void WriteFile(string path)
+		public object GetDataXMLFile(string path, Type type)
 		{
-		}
+			String all_path = PATH_DATA + path;
+			XmlSerializer serializer = new XmlSerializer(type);
+			Object obj_res = null;
 
-		/// <summary>
-		/// Возвращает данные из настроек
-		/// </summary>
-		/// <returns></returns>
-		public List<Item> GetSettingListItems()
-		{
-			return items;
-		}
+			if (!Directory.Exists(PATH_DATA))
+				Directory.CreateDirectory(PATH_DATA);
 
-		public class Item
-		{
-			public String name;
-			public String param;
+			using (Stream stream = new FileStream(all_path, FileMode.Open))
+			{
+				obj_res = serializer.Deserialize(stream);
+			}
+
+			return obj_res;
 		}
 	}
 }
