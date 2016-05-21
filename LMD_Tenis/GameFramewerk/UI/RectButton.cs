@@ -15,8 +15,9 @@ namespace LMD_Tenis.GameFramewerk.UI
 			switch (type)
 			{
 					case TypeTouch.Down:
-					if (x > GetX() - GetWidth()/2 && x < GetX() + GetWidth()/2 &&
-					    y > GetY() - GetHeight()/2 && y < GetY() + GetHeight())
+
+					if (x > GetX() - GetWidth() / 2 && x < GetX() + GetWidth() / 2 &&
+						y > GetY() - GetHeight() / 2 && y < GetY() + GetHeight())
 					{
 						Animation?.Start();
 					}
@@ -26,8 +27,8 @@ namespace LMD_Tenis.GameFramewerk.UI
 					if (Animation == null)
 						if (onClick != null)
 						{
-							if (x > GetX() - GetWidth()/2 && x < GetX() + GetWidth()/2 &&
-							    y > GetY() - GetHeight()/2 && y < GetY() + GetHeight())
+							if (x > GetX() - GetWidth() / 2 && x < GetX() + GetWidth() / 2 &&
+								y > GetY() - GetHeight() / 2 && y < GetY() + GetHeight())
 							{
 								onClick(this);
 							}

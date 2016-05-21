@@ -13,10 +13,12 @@
 		protected float angularVelocity;
 		protected float velocity_x;
 		protected float velocity_y;
+		protected bool IsCamera;
 
 		protected BaseUI(IGame game)
 		{
 			this.game = game;
+			IsCamera = true;
 		}
 
 		/// <summary>
@@ -92,10 +94,38 @@
 		/// Очищает элемент из памяти
 		/// </summary>
 		public abstract void Dispose();
-
+		/// <summary>
+		/// Возвращает значение указывающее привязана ли камера к данному элементу
+		/// </summary>
+		/// <returns></returns>
+		public bool GetEnableCamera()
+		{
+			return IsCamera;
+		}
+		/// <summary>
+		/// Указывает значение, влияет ли камера на данный элемент
+		/// </summary>
+		/// <param name="value"></param>
+		public abstract void SetEnableCamera(bool value);
+		/// <summary>
+		/// Возвращает значение масштабирования по координате X
+		/// </summary>
+		/// <returns></returns>
 		public abstract float GetScaleX();
+		/// <summary>
+		/// Возвращает значение масштабирования по координате Y
+		/// </summary>
+		/// <returns></returns>
 		public abstract float GetScaleY();
+		/// <summary>
+		/// Устанавливает значение масштабирования по координате X
+		/// </summary>
+		/// <param name="value">Значение масштабирования</param>
 		public abstract void SetScaleX(float value);
+		/// <summary>
+		/// Устанавливает значение масштабирования по координате Y
+		/// </summary>
+		/// <param name="value">Значение масштабирования</param>
 		public abstract void SetScaleY(float value);
 	}
 }

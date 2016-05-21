@@ -42,5 +42,10 @@
 		/// </summary>
 		/// <returns></returns>
 		IAudio GetAudio();
+		/// <summary>
+		/// Возвращает указатель на объект отвечающий за положение элементов на экране
+		/// </summary>
+		/// <returns></returns>
+		ICamera GetCamera();
 	}
 }

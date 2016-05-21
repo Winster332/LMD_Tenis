@@ -32,6 +32,7 @@ namespace LMD_Tenis.GameEngine.Windows
 
 			intent_to_menu = new Intent(Game);
 			intent_to_menu.SetScreenLoading(new ScreenLoading(Game));
+			game.GetCamera().SetXY(100, 150);
 		}
 
 		private void Button_onClick(GBaseButton button)

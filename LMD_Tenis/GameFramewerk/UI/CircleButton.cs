@@ -36,6 +36,8 @@ namespace LMD_Tenis.GameFramewerk.UI
 				case TypeTouch.Down:
 					distance = (float)Math.Sqrt(Math.Pow(x - GetX(), 2) + Math.Pow(y - GetY(), 2));
 
+					Console.WriteLine(""+distance);
+
 					if (distance < GetWidth()/2)
 					{
 						Animation?.Start();
@@ -46,7 +48,7 @@ namespace LMD_Tenis.GameFramewerk.UI
 					if (Animation == null)
 						if (onClick != null)
 						{
-							distance = (float) Math.Sqrt(Math.Pow(x - GetX(), 2) + Math.Pow(y - GetY(), 2));
+							distance = (float)Math.Sqrt(Math.Pow(x - GetX(), 2) + Math.Pow(y - GetY(), 2));
 
 							if (distance < GetWidth()/2)
 							{
@@ -55,6 +57,17 @@ namespace LMD_Tenis.GameFramewerk.UI
 						}
 					break;
 			}
+		}
+
+		public void SetRadius(float radius)
+		{
+			image.SetX(radius * 2);
+			image.SetY(radius * 2);
+		}
+
+		public float GetRadius()
+		{
+			return GetWidth();
 		}
 
 		public override void OnStart(IAnimation animation)

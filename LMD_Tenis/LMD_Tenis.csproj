@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="GameEngine\ManagerGame.cs" />
     <Compile Include="GameFramewerk\BaseGame\GAudio.cs" />
+    <Compile Include="GameFramewerk\BaseGame\GCamera.cs" />
     <Compile Include="GameFramewerk\BaseGame\GFileIO.cs" />
     <Compile Include="GameFramewerk\BaseGame\GGame.cs">
       <SubType>Form</SubType>
@@ -61,6 +62,7 @@
     <Compile Include="GameFramewerk\BaseGame\Physics\Solver.cs" />
     <Compile Include="GameFramewerk\BaseGame\SystemParticles.cs" />
     <Compile Include="GameFramewerk\IAudio.cs" />
+    <Compile Include="GameFramewerk\ICamera.cs" />
     <Compile Include="GameFramewerk\IFileIO.cs" />
     <Compile Include="GameFramewerk\IGame.cs" />
     <Compile Include="GameFramewerk\IGraphics.cs" />

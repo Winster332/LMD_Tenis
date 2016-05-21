@@ -29,11 +29,17 @@ namespace LMD_Tenis.GameFramewerk.UI
 
 		public override float GetX()
 		{
+			if (IsCamera)
+				return image.GetX() + game.GetCamera().GetX();
+
 			return image.GetX();
 		}
 
 		public override float GetY()
 		{
+			if (IsCamera)
+				return image.GetY() + game.GetCamera().GetY();
+			
 			return image.GetY();
 		}
 
@@ -148,6 +154,11 @@ namespace LMD_Tenis.GameFramewerk.UI
 		{
 			Animation = animation;
 			animation.SetEventAnimation(this);
+		}
+
+		public override void SetEnableCamera(bool value)
+		{
+			IsCamera = value;
 		}
 
 		public abstract void OnStart(IAnimation animation);

@@ -13,6 +13,7 @@ namespace LMD_Tenis.GameFramewerk.UI
 			matrix = new Matrix();
 			scaleX = 1f;
 			scaleY = 1f;
+			IsCamera = true;
 		}
 
 		public override void SetX(float value)
@@ -88,7 +89,11 @@ namespace LMD_Tenis.GameFramewerk.UI
 			if (image != null)
 			{
 				matrix = new Matrix();
-				matrix.Translate(x - width/2, y - height/2);
+
+				if (IsCamera)
+					matrix.Translate(x - width/2 + game.GetCamera().GetX(), y - height/2 + game.GetCamera().GetY());
+				else matrix.Translate(x - width / 2, y - height / 2);
+
 				matrix.Scale(scaleX, scaleY);
 				matrix.RotateAt(angle*180/(float) System.Math.PI, new PointF(width/2, height/2));
 
@@ -147,6 +152,11 @@ namespace LMD_Tenis.GameFramewerk.UI
 		public override void SetScaleY(float value)
 		{
 			scaleY = value;
+		}
+
+		public override void SetEnableCamera(bool value)
+		{
+			IsCamera = value;
 		}
 
 		public override float GetScaleX()
