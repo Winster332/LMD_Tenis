@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7B5114A9-99A8-4CAC-8709-4AFBE41779AC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LMD_Tenis</RootNamespace>
+    <AssemblyName>LMD_Tenis</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Box2DX">
+      <HintPath>E:\Libary programs\Box2D\Box2DX.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GameEngine\ManagerGame.cs" />
+    <Compile Include="GameFramewerk\BaseGame\GAudio.cs" />
+    <Compile Include="GameFramewerk\BaseGame\GFileIO.cs" />
+    <Compile Include="GameFramewerk\BaseGame\GGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameFramewerk\BaseGame\GGraphics.cs" />
+    <Compile Include="GameFramewerk\BaseGame\GInput.cs" />
+    <Compile Include="GameFramewerk\BaseGame\Physics\GPhysics.cs" />
+    <Compile Include="GameFramewerk\BaseGame\Physics\InfoBody.cs" />
+    <Compile Include="GameFramewerk\BaseGame\Physics\Solver.cs" />
+    <Compile Include="GameFramewerk\BaseGame\SystemParticles.cs" />
+    <Compile Include="GameFramewerk\IAudio.cs" />
+    <Compile Include="GameFramewerk\IFileIO.cs" />
+    <Compile Include="GameFramewerk\IGame.cs" />
+    <Compile Include="GameFramewerk\IGraphics.cs" />
+    <Compile Include="GameFramewerk\IInput.cs" />
+    <Compile Include="GameFramewerk\IPhysics.cs" />
+    <Compile Include="GameFramewerk\Objects\BaseObject.cs" />
+    <Compile Include="GameFramewerk\Objects\Circle.cs" />
+    <Compile Include="GameFramewerk\Objects\Rectangle.cs" />
+    <Compile Include="GameFramewerk\Objects\TypeObject.cs" />
+    <Compile Include="GameFramewerk\Screen.cs" />
+    <Compile Include="GameFramewerk\UI\Animations\AnimationEffect.cs" />
+    <Compile Include="GameFramewerk\UI\Animations\IAnimationEvent.cs" />
+    <Compile Include="GameFramewerk\UI\Animations\AnimationScale.cs" />
+    <Compile Include="GameFramewerk\UI\Animations\IAnimation.cs" />
+    <Compile Include="GameFramewerk\UI\BaseUI.cs" />
+    <Compile Include="GameFramewerk\UI\ButtonEvents.cs" />
+    <Compile Include="GameFramewerk\UI\CircleButton.cs" />
+    <Compile Include="GameFramewerk\UI\GBaseButton.cs" />
+    <Compile Include="GameFramewerk\UI\GImage.cs" />
+    <Compile Include="GameFramewerk\UI\GTopPanel.cs" />
+    <Compile Include="GameFramewerk\UI\RectButton.cs" />
+    <Compile Include="GameFramewerk\UI\TypeTouch.cs" />
+    <Compile Include="GameFramewerk\Windows\Intent.cs" />
+    <Compile Include="GameFramewerk\Windows\ManagementScreen.cs" />
+    <Compile Include="GameEngine\Windows\ScreenGame.cs" />
+    <Compile Include="GameEngine\Windows\ScreenLoading.cs" />
+    <Compile Include="GameEngine\Windows\ScreenMenu.cs" />
+    <Compile Include="GameEngine\Windows\ScreenStart.cs" />
+    <Compile Include="GameResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GameResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GameResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GameResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle_bullet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dot_f_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rect_3.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
