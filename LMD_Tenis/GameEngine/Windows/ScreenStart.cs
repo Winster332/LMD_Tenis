@@ -1,42 +1,26 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using LMD_Tenis.GameFramewerk;
 using LMD_Tenis.GameFramewerk.BaseGame;
 using LMD_Tenis.GameFramewerk.UI;
-using LMD_Tenis.GameFramewerk.UI.Animations;
 using LMD_Tenis.GameFramewerk.Windows;
 
 namespace LMD_Tenis.GameEngine.Windows
 {
 	public class ScreenStart : Screen
 	{
-		private CircleButton button;
+		private GImage imgLMD;
 		private float dt;
 		private Intent intent_to_menu;
+		private float ScaleImg_x;
+		private float ScaleImg_y;
+		private float Time = 30;
 
 		public ScreenStart(IGame game) : base(game)
 		{
-			button = new CircleButton(game);
-			button.SetX(100);
-			button.SetY(100);
-			button.SetWidth(100);
-			button.SetHeight(100);
-			button.SetBitmap(GameResource.bullet);
-
-			AnimationScale animation = new AnimationScale();
-			animation.Initialize(100f, 100f, 150f, 150f, 1f, 1f, button, true);
-			
-
-			button.SetAnimation(animation);
-			button.onClick += Button_onClick;
-			AddElement(button);
-
-			intent_to_menu = new Intent(Game);
-			intent_to_menu.SetScreenLoading(new ScreenLoading(Game));
-			game.GetCamera().SetXY(100, 150);
+		
 		}
 
-		private void Button_onClick(GBaseButton button)
+		private void StartMenu()
 		{
 			intent_to_menu.screenFrom = this;
 			intent_to_menu.screenTo = new ScreenMenu(Game);
@@ -46,18 +30,43 @@ namespace LMD_Tenis.GameEngine.Windows
 		public override void Step(float dt)
 		{
 			this.dt = dt;
+
+			if (ScaleImg_x < 250)
+				ScaleImg_x+=2;
+			if (ScaleImg_y < 200)
+				ScaleImg_y+=2;
+			else
+			{
+				Time -= 0.1f;
+				if (Time <= 0)
+					StartMenu();
+			}
+
+			imgLMD.SetWidth(ScaleImg_x);
+			imgLMD.SetHeight(ScaleImg_y);
 		}
 
 		public override void Draw()
 		{
-			Game.GetGraphics().GetGraphics().Clear(Color.Brown);
+			Game.GetGraphics().GetGraphics().Clear(Color.FromArgb(50, 50, 50));
 			
-			Game.GetSystemParticles().DrawAndStep(dt);
 			DrawElements(dt);
 		}
 
 		public override void Resume()
 		{
+			imgLMD = new GImage(Game);
+			imgLMD.SetImage(GameResource.text_lmd);
+			imgLMD.SetWidth(50);
+			imgLMD.SetHeight(1);
+			imgLMD.SetX(Game.GetWindowWidth() / 2 + 90);
+			imgLMD.SetY(200);
+			ScaleImg_x = imgLMD.GetWidth();
+			ScaleImg_y = imgLMD.GetHeight();
+			AddElement(imgLMD);
+
+			intent_to_menu = new Intent(Game);
+			intent_to_menu.SetScreenLoading(null);
 		}
 
 		public override void Pause()
@@ -73,7 +82,7 @@ namespace LMD_Tenis.GameEngine.Windows
 		{
 			TouchElements(eventArgs.X, eventArgs.Y, TypeTouch.Down);
 
-			Game.GetSystemParticles().Add(eventArgs.X, eventArgs.Y, new GSystemParticles.ParticleParameters[]
+		/*	Game.GetSystemParticles().Add(eventArgs.X, eventArgs.Y, new GSystemParticles.ParticleParameters[]
 			{
 				new GSystemParticles.ParticleParameters()
 				{
@@ -89,7 +98,7 @@ namespace LMD_Tenis.GameEngine.Windows
 					TTL = 100,
 					Type = GSystemParticles.TypeParticle.Circle
 				},
-			});
+			});*/
 		}
 
 		public override void TouchMove(System.Windows.Forms.MouseEventArgs eventArgs)

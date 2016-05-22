@@ -37,7 +37,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 			{
 				world.DestroyBody(list);
 			}
-			world.Dispose();
+		//	world.Dispose();
 		}
 
 		public void Step(float dt, int iterat)
@@ -62,9 +62,14 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 			}
 		}
 
+		public Solver GetSolver()
+		{
+			return solver;
+		}
+
 		#region Rectangle
 		public InfoBody AddRect(float x, float y, float w, float h, float angle, float density, 
-			float friction, float restetution, Bitmap image)
+			float friction, float restetution, Bitmap image, Object userDate = null)
 		{
 			GImage g_image = new GImage(game);
 			g_image.SetImage(image);
@@ -88,6 +93,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 			InfoBody info = new InfoBody();
 			info.image = g_image;
 			info.body = body;
+			info.userDate = userDate;
 
 			body.SetUserData(info);
 
@@ -95,7 +101,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 		}
 
 		public InfoBody AddRect(float x, float y, float w, float h, float angle, float density, 
-			float friction, float restetution, float mass, GImage image)
+			float friction, float restetution, float mass, GImage image, Object userDate = null)
 		{
 			BodyDef bDef = new BodyDef();
 			bDef.Position.Set(x / metric, y / metric);
@@ -120,6 +126,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 			InfoBody info = new InfoBody();
 			info.image = image;
 			info.body = body;
+			info.userDate = userDate;
 
 			body.SetUserData(info);
 
@@ -128,7 +135,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 
 		public InfoBody AddRect(float x, float y, float w, float h, float angle, float density,
 			float friction, float restetution, float mass, GImage image, bool IsBullet = true,
-			bool IsSensor = false, bool AllowSleep = false, short group_index = 1)
+			bool IsSensor = false, bool AllowSleep = false, short group_index = 1, Object userDate = null)
 		{
 			BodyDef bDef = new BodyDef();
 			bDef.Position.Set(x / metric, y / metric);
@@ -157,6 +164,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 			InfoBody info = new InfoBody();
 			info.image = image;
 			info.body = body;
+			info.userDate = userDate;
 
 			body.SetUserData(info);
 
@@ -165,7 +173,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 		#endregion
 		#region Circle
 		public InfoBody AddCircle(float x, float y, float radius, float angle, float density,
-			float friction, float restetution, Bitmap image)
+			float friction, float restetution, Bitmap image, Object userDate = null)
 		{
 			GImage g_image = new GImage(game);
 			g_image.SetImage(image);
@@ -189,6 +197,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 			InfoBody info = new InfoBody();
 			info.image = g_image;
 			info.body = body;
+			info.userDate = userDate;
 
 			body.SetUserData(info);
 
@@ -196,7 +205,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 		}
 
 		public InfoBody AddCircle(float x, float y, float radius, float angle, float density,
-			float friction, float restetution, float mass, GImage image)
+			float friction, float restetution, float mass, GImage image, Object userDate = null)
 		{
 			BodyDef bDef = new BodyDef();
 			bDef.Position.Set(x / metric, y / metric);
@@ -221,6 +230,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 			InfoBody info = new InfoBody();
 			info.image = image;
 			info.body = body;
+			info.userDate = userDate;
 
 			body.SetUserData(info);
 
@@ -229,7 +239,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 
 		public InfoBody AddCircle(float x, float y, float radius, float angle, float density,
 			float friction, float restetution, float mass, GImage image, bool IsBullet = true,
-			bool IsSensor = false, bool AllowSleep = false, short group_index = 1)
+			bool IsSensor = false, bool AllowSleep = false, short group_index = 1, Object userDate = null)
 		{
 			BodyDef bDef = new BodyDef();
 			bDef.Position.Set(x / metric, y / metric);
@@ -258,6 +268,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 			InfoBody info = new InfoBody();
 			info.image = image;
 			info.body = body;
+			info.userDate = userDate;
 
 			body.SetUserData(info);
 
@@ -266,7 +277,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 		#endregion
 		#region Vert
 		public InfoBody AddVert(float x, float y, Vec2[] vert, float angle, float density,
-			float friction, float restetution, Bitmap image)
+			float friction, float restetution, Bitmap image, Object userDate = null)
 		{
 			float max_w = vert[0].X;
 			float max_h = vert[0].Y;
@@ -309,6 +320,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 			InfoBody info = new InfoBody();
 			info.image = g_image;
 			info.body = body;
+			info.userDate = userDate;
 
 			body.SetUserData(info);
 
@@ -316,7 +328,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 		}
 
 		public InfoBody AddVert(float x, float y, Vec2[] vert, float angle, float density,
-			float friction, float restetution, float mass, GImage image)
+			float friction, float restetution, float mass, GImage image, Object userDate = null)
 		{
 			for (int i = 0; i < vert.Length; i++)
 			{
@@ -351,6 +363,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 			InfoBody info = new InfoBody();
 			info.image = image;
 			info.body = body;
+			info.userDate = userDate;
 
 			body.SetUserData(info);
 
@@ -359,7 +372,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 
 		public InfoBody AddVert(float x, float y, Vec2[] vert, float angle, float density,
 			float friction, float restetution, float mass, GImage image, bool IsBullet = true,
-			bool IsSensor = false, bool AllowSleep = false, short group_index = 1)
+			bool IsSensor = false, bool AllowSleep = false, short group_index = 1, Object userDate = null)
 		{
 			for (int i = 0; i < vert.Length; i++)
 			{
@@ -398,6 +411,7 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 			InfoBody info = new InfoBody();
 			info.image = image;
 			info.body = body;
+			info.userDate = userDate;
 
 			body.SetUserData(info);
 

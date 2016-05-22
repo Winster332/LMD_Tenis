@@ -104,7 +104,7 @@ namespace LMD_Tenis.GameFramewerk.UI
 
 		public override void Dispose()
 		{
-			image.Dispose();
+			image?.Dispose();
 			image = null;
 			matrix.Dispose();
 		}

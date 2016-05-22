@@ -132,6 +132,16 @@ namespace LMD_Tenis.GameFramewerk.BaseGame
 			return systemParticles;
 		}
 
+		public float GetWindowWidth()
+		{
+			return this.Width;
+		}
+
+		public float GetWindowHeight()
+		{
+			return this.Height;
+		}
+
 		#region Update and rendering game
 		private void GGame_Paint(object sender, PaintEventArgs e) // Обновляет текущий экран
 		{

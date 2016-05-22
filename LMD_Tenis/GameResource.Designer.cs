@@ -63,9 +63,9 @@ namespace LMD_Tenis {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bullet {
+        internal static System.Drawing.Bitmap button_audio_off {
             get {
-                object obj = ResourceManager.GetObject("bullet", resourceCulture);
+                object obj = ResourceManager.GetObject("button_audio_off", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace LMD_Tenis {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap circle_bullet {
+        internal static System.Drawing.Bitmap button_audio_on {
             get {
-                object obj = ResourceManager.GetObject("circle_bullet", resourceCulture);
+                object obj = ResourceManager.GetObject("button_audio_on", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,129 @@ namespace LMD_Tenis {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dot_f_5 {
+        internal static System.Drawing.Bitmap button_exit {
             get {
-                object obj = ResourceManager.GetObject("dot_f_5", resourceCulture);
+                object obj = ResourceManager.GetObject("button_exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_menu {
+            get {
+                object obj = ResourceManager.GetObject("button_menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_pause {
+            get {
+                object obj = ResourceManager.GetObject("button_pause", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_play {
+            get {
+                object obj = ResourceManager.GetObject("button_play", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap circle_1 {
+            get {
+                object obj = ResourceManager.GetObject("circle_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap circle_2 {
+            get {
+                object obj = ResourceManager.GetObject("circle_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap circle_3 {
+            get {
+                object obj = ResourceManager.GetObject("circle_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap empty_button {
+            get {
+                object obj = ResourceManager.GetObject("empty_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap particle {
+            get {
+                object obj = ResourceManager.GetObject("particle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap particle_2 {
+            get {
+                object obj = ResourceManager.GetObject("particle_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap particle_3 {
+            get {
+                object obj = ResourceManager.GetObject("particle_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rect_1 {
+            get {
+                object obj = ResourceManager.GetObject("rect_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rect_2 {
+            get {
+                object obj = ResourceManager.GetObject("rect_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -101,12 +221,32 @@ namespace LMD_Tenis {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Top]{0}
-        ///[Audio]{true}.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static string Settings {
+        internal static System.Drawing.Bitmap text_lmd {
             get {
-                return ResourceManager.GetString("Settings", resourceCulture);
+                object obj = ResourceManager.GetObject("text_lmd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap text_loading {
+            get {
+                object obj = ResourceManager.GetObject("text_loading", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap text_tenis {
+            get {
+                object obj = ResourceManager.GetObject("text_tenis", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

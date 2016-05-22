@@ -20,7 +20,7 @@ namespace LMD_Tenis.GameEngine.Windows
 			image.SetHeight(100);
 			image.SetX(200);
 			image.SetY(100);
-			image.SetImage(GameResource.dot_f_5);
+			image.SetImage(GameResource.text_lmd);
 
 			AddElement(image);
 		}

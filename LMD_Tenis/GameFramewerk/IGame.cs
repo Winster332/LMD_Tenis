@@ -47,7 +47,20 @@
 		/// </summary>
 		/// <returns></returns>
 		ICamera GetCamera();
-
+		/// <summary>
+		/// Возвращает указатель на объект отвечающий за добавление частиц на экран
+		/// </summary>
+		/// <returns></returns>
 		ISystemParticles GetSystemParticles();
+		/// <summary>
+		/// Возвращает ширину окна
+		/// </summary>
+		/// <returns></returns>
+		float GetWindowWidth();
+		/// <summary>
+		/// Возвращает высоту окна
+		/// </summary>
+		/// <returns></returns>
+		float GetWindowHeight();
 	}
 }

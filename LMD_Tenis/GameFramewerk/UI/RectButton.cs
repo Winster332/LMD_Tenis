@@ -12,28 +12,31 @@ namespace LMD_Tenis.GameFramewerk.UI
 
 		public override void SetTouch(float x, float y, TypeTouch type)
 		{
-			switch (type)
+			if (IsVisible)
 			{
+				switch (type)
+				{
 					case TypeTouch.Down:
-
-					if (x > GetX() - GetWidth() / 2 && x < GetX() + GetWidth() / 2 &&
-						y > GetY() - GetHeight() / 2 && y < GetY() + GetHeight())
-					{
-						Animation?.Start();
-					}
-					break;
-					case TypeTouch.Move: break;
-					case TypeTouch.Up:
-					if (Animation == null)
-						if (onClick != null)
+						if (x > GetX() - GetWidth()/2 && x < GetX() + GetWidth()/2 &&
+						    y > GetY() - GetHeight()/2 && y < GetY() + GetHeight())
 						{
-							if (x > GetX() - GetWidth() / 2 && x < GetX() + GetWidth() / 2 &&
-								y > GetY() - GetHeight() / 2 && y < GetY() + GetHeight())
-							{
-								onClick(this);
-							}
+							Animation?.Start();
 						}
-					break;
+						break;
+					case TypeTouch.Move:
+						break;
+					case TypeTouch.Up:
+						if (Animation == null)
+							if (onClick != null)
+							{
+								if (x > GetX() - GetWidth()/2 && x < GetX() + GetWidth()/2 &&
+								    y > GetY() - GetHeight()/2 && y < GetY() + GetHeight())
+								{
+									onClick(this);
+								}
+							}
+						break;
+				}
 			}
 		}
 
@@ -49,14 +52,20 @@ namespace LMD_Tenis.GameFramewerk.UI
 
 		public override void Step(float dt)
 		{
-			image.Step(dt);
+			if (IsVisible)
+			{
+				image.Step(dt);
 
-			Animation?.Step(dt);
+				Animation?.Step(dt);
+			}
 		}
 
 		public override void Draw()
 		{
-			image.Draw();
+			if (IsVisible)
+			{
+				image.Draw();
+			}
 		}
 
 		public override void Dispose()

@@ -99,6 +99,12 @@ namespace LMD_Tenis.GameFramewerk.BaseGame
 				}
 				else
 				{
+					TTL--;
+					Alpha -= VelocityAlpha;
+					radius -= VelSize;
+
+					if (TTL <= 0) Dead = true;
+					if (radius <= Math.Abs(VelocityAlpha)) Dead = true;
 					Image?.Step(dt);
 				}
 			}
@@ -116,8 +122,10 @@ namespace LMD_Tenis.GameFramewerk.BaseGame
 						game.GetGraphics().GetGraphics().FillEllipse(new SolidBrush(Color.FromArgb((int)Alpha, Color)), 0, 0, radius * 2, radius * 2);
 						break;
 					case TypeParticle.Image:
-						Image.SetVelocityX(vel_x);
-						Image.SetVelocityY(vel_y);
+						Image.SetWidth(radius * 2);
+						Image.SetHeight(radius * 2);
+						Image.SetX(x);
+						Image.SetY(y);
 						Image.SetAngularVelocity(AngularVelocity);
 						Image.Draw();
 						break;

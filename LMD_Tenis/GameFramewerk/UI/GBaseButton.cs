@@ -9,12 +9,14 @@ namespace LMD_Tenis.GameFramewerk.UI
 		protected GImage image;
 		protected Object Tag;
 		protected IAnimation Animation;
+		protected bool IsVisible;
 
 		protected GBaseButton(IGame game) : base(game)
 		{
 			image = new GImage(game);
 			image.SetScaleX(1f);
 			image.SetScaleY(1f);
+			IsVisible = true;
 		}
 
 		public override void SetX(float value)
@@ -159,6 +161,16 @@ namespace LMD_Tenis.GameFramewerk.UI
 		public override void SetEnableCamera(bool value)
 		{
 			IsCamera = value;
+		}
+
+		public void SetVisible(bool value)
+		{
+			IsVisible = value;
+		}
+
+		public bool GetVisible()
+		{
+			return IsVisible;
 		}
 
 		public abstract void OnStart(IAnimation animation);

@@ -7,5 +7,6 @@ namespace LMD_Tenis.GameFramewerk.BaseGame.Physics
 	{
 		public GImage image;
 		public Body body;
+		public object userDate;
 	}
 }

@@ -26,8 +26,15 @@ namespace LMD_Tenis.GameFramewerk.Windows
 
 		public void Start()
 		{
-			screenLoading.SetUserDate(this);
-			game.SetScreen(screenLoading);
+			if (screenLoading != null)
+			{
+				screenLoading.SetUserDate(this);
+				game.SetScreen(screenLoading);
+			}
+			else
+			{
+				game.SetScreen(screenTo);
+			}
 		}
 
 		public void Stop()

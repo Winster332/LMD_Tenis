@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using Box2DX.Common;
 using LMD_Tenis.GameFramewerk.BaseGame.Physics;
 using LMD_Tenis.GameFramewerk.UI;
@@ -35,6 +36,12 @@ namespace LMD_Tenis.GameFramewerk
 		/// Прорисовка мира
 		/// </summary>
 		void Draw();
+
+		/// <summary>
+		/// Возвращает указатель на солвер
+		/// </summary>
+		/// <returns></returns>
+		Solver GetSolver();
 		
 		/// <summary>
 		/// Добавляет в мир новое тело физической модели - квадрат
@@ -50,7 +57,7 @@ namespace LMD_Tenis.GameFramewerk
 		/// <param name="image">Изображение для тела</param>
 		/// <returns></returns>
 		InfoBody AddRect(float x, float y, float w, float h, float angle, float density,
-			float friction, float restetution, Bitmap image);
+			float friction, float restetution, Bitmap image, Object userDate = null);
 		
 		/// <summary>
 		/// Добавляет в мир новое тело физической модели - квадрат
@@ -67,7 +74,7 @@ namespace LMD_Tenis.GameFramewerk
 		/// <param name="image">Настроеный класc GImage</param>
 		/// <returns></returns>
 		InfoBody AddRect(float x, float y, float w, float h, float angle, float density,
-			float friction, float restetution, float mass, GImage image);
+			float friction, float restetution, float mass, GImage image, Object userDate = null);
 		
 		/// <summary>
 		/// Добавляет в мир новое тело физической модели - квадрат
@@ -89,7 +96,7 @@ namespace LMD_Tenis.GameFramewerk
 		/// <returns></returns>
 		InfoBody AddRect(float x, float y, float w, float h, float angle, float density,
 			float friction, float restetution, float mass, GImage image, bool IsBullet = true,
-			bool IsSensor = false, bool AllowSleep = false, short group_index = 1);
+			bool IsSensor = false, bool AllowSleep = false, short group_index = 1, Object userDate = null);
 		
 		/// <summary>
 		/// Добавляет в мир новое тело физической модели - круг
@@ -104,7 +111,7 @@ namespace LMD_Tenis.GameFramewerk
 		/// <param name="image">Изображение для тела</param>
 		/// <returns></returns>
 		InfoBody AddCircle(float x, float y, float radius, float angle, float density,
-			float friction, float restetution, Bitmap image);
+			float friction, float restetution, Bitmap image, Object userDate = null);
 		
 		/// <summary>
 		/// Добавляет в мир новое тело физической модели - круг
@@ -120,7 +127,7 @@ namespace LMD_Tenis.GameFramewerk
 		/// <param name="image">Настроеный класc GImage</param>
 		/// <returns></returns>
 		InfoBody AddCircle(float x, float y, float radius, float angle, float density,
-			float friction, float restetution, float mass, GImage image);
+			float friction, float restetution, float mass, GImage image, Object userDate = null);
 		
 		/// <summary>
 		/// Добавляет в мир новое тело физической модели - круг
@@ -141,7 +148,7 @@ namespace LMD_Tenis.GameFramewerk
 		/// <returns></returns>
 		InfoBody AddCircle(float x, float y, float radius, float angle, float density,
 			float friction, float restetution, float mass, GImage image, bool IsBullet = true,
-			bool IsSensor = false, bool AllowSleep = false, short group_index = 1);
+			bool IsSensor = false, bool AllowSleep = false, short group_index = 1, Object userDate = null);
 
 		/// <summary>
 		/// Добавляет в мир новое тело произвольной физической модели
@@ -157,7 +164,7 @@ namespace LMD_Tenis.GameFramewerk
 		/// <param name="image">Изображение для тела</param>
 		/// <returns></returns>
 		InfoBody AddVert(float x, float y, Vec2[] vert, float angle, float density,
-			float friction, float restetution, Bitmap image);
+			float friction, float restetution, Bitmap image, Object userDate = null);
 
 		/// <summary>
 		/// Добавляет в мир новое тело произвольной физической модели
@@ -174,7 +181,7 @@ namespace LMD_Tenis.GameFramewerk
 		/// <param name="image">Настроеный класc GImage</param>
 		/// <returns></returns>
 		InfoBody AddVert(float x, float y, Vec2[] vert, float angle, float density,
-			float friction, float restetution, float mass, GImage image);
+			float friction, float restetution, float mass, GImage image, Object userDate = null);
 
 		/// <summary>
 		/// Добавляет в мир новое тело произвольной физической модели
@@ -196,7 +203,7 @@ namespace LMD_Tenis.GameFramewerk
 		/// <returns></returns>
 		InfoBody AddVert(float x, float y, Vec2[] vert, float angle, float density,
 			float friction, float restetution, float mass, GImage image, bool IsBullet = true,
-			bool IsSensor = false, bool AllowSleep = false, short group_index = 1);
+			bool IsSensor = false, bool AllowSleep = false, short group_index = 1, Object userDate = null);
 
 	}
 }

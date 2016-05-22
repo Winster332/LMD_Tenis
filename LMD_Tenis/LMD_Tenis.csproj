@@ -48,7 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameEngine\ManagerGame.cs" />
+    <Compile Include="GameEngine\LogicFoe.cs" />
+    <Compile Include="GameEngine\Settings.cs" />
     <Compile Include="GameFramewerk\BaseGame\GAudio.cs" />
     <Compile Include="GameFramewerk\BaseGame\GCamera.cs" />
     <Compile Include="GameFramewerk\BaseGame\GFileIO.cs" />
@@ -122,19 +123,79 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\circle_bullet.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\dot_f_5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Settings.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\bullet.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\circle_border.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle_border_dynamic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle_bullet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text_lmd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text_loading.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_audio_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_audio_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empty_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\particle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\particle_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\particle_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text_lmd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text_loading.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text_tenis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Без имени-1.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\rect_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rect_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rect_2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
